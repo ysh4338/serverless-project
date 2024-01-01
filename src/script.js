@@ -4,7 +4,7 @@ function addTodo() {
     const todoInput = document.getElementById('todoInput').value;
 
     if(todoInput) {
-        fetch('https://0s9f7udxu9.execute-api.ap-northeast-2.amazonaws.com/dev/insert', {
+        fetch('{API_GATEWAAY_INSERT_URL}', {
             method: 'POST',
             body: JSON.stringify({ todo: todoInput }),
             headers: { 'Content-Type': 'application/json' }
@@ -50,7 +50,7 @@ function deleteTodo(item) {
     // console.log(typeof item)
     // todo = JSON.parse(item)
     // console.log(typeof todo)
-    fetch('https://0s9f7udxu9.execute-api.ap-northeast-2.amazonaws.com/dev/delete', {
+    fetch('{API_GATEWAAY_DELETE_URL}', {
         method: 'POST',
         body: JSON.stringify({ todo: item.todo }),
         headers: { 'Content-Type': 'application/json' }
